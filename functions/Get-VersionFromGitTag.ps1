@@ -1,6 +1,8 @@
 function Get-VersionFromGitTag {
     $tag = Get-GitTagOnLastCommit
-    if ($tag -match "^v(\d+\.\d+\.\d+(-.+)?)$") { $matches[1] } else { $null }
+
+    $tag | Select-String -Pattern "^v(\d+\.\d+\.\d+(-.+)?)$" |
+        Foreach-Object { $_.Matches } | Foreach-Object { $_.Groups[1] } | Select-Object -First 1
 }
 
 function Get-GitTagOnLastCommit {
