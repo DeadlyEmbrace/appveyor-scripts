@@ -5,5 +5,6 @@ function Get-VersionFromGitTag {
 
 function Get-GitTagOnLastCommit {
     ($tag = git describe --tags --exact-match) 2> $null
+    Write-Host "Tag is '$tag'"
     if ($?) { $tag } else { $null }
 }
