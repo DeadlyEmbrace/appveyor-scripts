@@ -2,6 +2,8 @@
 
 Shared scripts used to configure [AppVeyor](http://www.appveyor.com/).
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ettn9b5m0130414n/branch/master)](https://ci.appveyor.com/project/vtex/appveyor-scripts/branch/master)
+
 ## Installation
 
 It is recommended to add this repository as a Git submodule of your repository:

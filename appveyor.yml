@@ -1,0 +1,46 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+version: "{build}"
+
+branches:
+  only:
+    - master
+
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+
+install:
+  - ps: (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+  - ps: Install-Module Pester
+
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+build: off
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+test_script:
+  - ps: Invoke-Pester -EnableExit
+
+#---------------------------------#
+#     deployment configuration    #
+#---------------------------------#
+
+deploy: off
+
+#---------------------------------#
+#         notifications           #
+#---------------------------------#
+
+notifications:
+  - provider: HipChat
+    auth_token:
+      secure: mdnRk4amuE4pT+1FcC9VTu8J2nGl0ZQJk1435t7KPXs=
+    room: Portal
