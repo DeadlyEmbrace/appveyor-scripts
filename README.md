@@ -9,7 +9,7 @@ Shared scripts used to configure [AppVeyor](http://www.appveyor.com/).
 It is recommended to add this repository as a Git submodule of your repository:
 
 ```bash
-$ git submodule add git@github.com:vtex/appveyor-scripts.git tools/appveyor
+$ git submodule add https://github.com/vtex/appveyor-scripts.git tools/appveyor
 ```
 
 AppVeyor does not automatically clone submodules, so you need to configure
